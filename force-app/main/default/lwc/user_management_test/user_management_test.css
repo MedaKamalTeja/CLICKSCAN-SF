@@ -1,0 +1,1171 @@
+.slds-theme_default {
+  background-color: #ffffff;
+}
+
+.slds-theme_shade {
+  background-color: #0070d2;
+}
+
+.slds-text-color_inverse {
+  color: #ffffff;
+}
+
+.slds-text-color_weak {
+  color: #54698d;
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: white; /* Default background color */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: blue; /* Hover background color */
+  color: white; /* Text color on hover */
+}
+
+.nav-link:active {
+  background-color: #3707e3;
+  color: white;
+}
+
+.drawer-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-link-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 0;
+  background-color: white; /* Matches nav-link background */
+  min-width: 200px; /* Increased width */
+  border-radius: 4px; /* Matches nav-link border radius */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Use checkbox to toggle dropdown */
+.dropdown-checkbox {
+  display: none;
+}
+
+.dropdown-label {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+.dropdown-checkbox:checked + label + .dropdown-content {
+  display: block; /* Show dropdown when checkbox is checked */
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: black; /* Text color set to black */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: blue; /* Matches nav-link hover */
+  color: white; /* Text color on hover */
+}
+
+.dropdown-content a:active {
+  background-color: #3707e3;
+  color: white;
+}
+
+.drawerinformation-fields {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+}
+
+.slds-col.slds-size_1-of-3 {
+  display: block;
+  max-width: 100%;
+}
+
+.right-align-absolute.slds-col.slds-size_2-of-3 {
+  flex: 1;
+  max-width: 80%;
+}
+
+.slds-table {
+  width: 100%;
+}
+
+.slds-table thead th,
+.slds-table tbody td {
+  text-align: left;
+}
+
+.slds-m-bottom_medium {
+  margin-bottom: 20px;
+}
+
+.right-align-absolute {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.user-info-container {
+  margin-right: 0;
+  margin-left: 315px;
+  width: 70%;
+  position: absolute;
+  border-radius: 6px;
+  border-width: 1px;
+  margin-top: 30px;
+  border-color: lightgray;
+}
+
+.user-icon {
+  font-size: 24px;
+  height: 172px;
+  margin-left: 360px;
+  position: absolute;
+}
+
+.slds-button_icon-inverse {
+  color: #ffffff;
+}
+
+.slds-button_icon-inverse:hover {
+  background-color: #005bb5;
+}
+
+.slds-button_icon {
+  padding: 0;
+}
+
+.main-div {
+  background-color: #ffffff;
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  width: 100%; /* Ensure the container takes full width */
+  padding: 0; /* Remove any padding that might affect alignment */
+  margin: 0; /* Remove any margin that might affect alignment */
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space between the header and the button */
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 1rem; /* Add spacing between the container and any content below it */
+}
+
+.slds-button {
+  margin-left: 15px; /* Push the button further to the right */
+}
+
+.actions {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.slds-theme_shade {
+  border-radius: 0.25rem;
+  width: 100%; /* Set the width of the container */
+  height: 200px; /* Set the height of the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  padding: 10px; /* Optional: Add some padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
+}
+
+.slds-theme_shade {
+  background-color: #abc7ff;
+}
+
+.slds-theme_default {
+  background-color: #f4f6f9;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.user-details div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.c-user_management_user_management {
+  background-color: #82a5e7;
+  border-radius: 5px;
+  border-color: #0000000c;
+}
+
+/* userManagement.css */
+
+/* Apply the pointer cursor to the table rows */
+.table-row {
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+/* Optional: Add a hover effect for better UX */
+.table-row:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+
+.first-page {
+  display: flex; /* Enables flexbox */
+  justify-content: space-between; /* Adjusts spacing between divs (optional) */
+}
+
+.container {
+  display: flex; /* Aligns child elements in a row */
+  align-items: center; /* Vertically aligns items in the center */
+  justify-content: space-between; /* Distributes space between items */
+}
+
+.header-button-container {
+  margin: 0; /* Removes default margins */
+  padding: 10px; /* Adds padding around content (optional) */
+}
+
+.slds-text-heading_large {
+  font-weight: bold; /* Applies bold font weight */
+  margin-top: -21px;
+  text-align: justify;
+  width: 312px;
+}
+
+.slds-table {
+  border-collapse: separate; /* Ensures that borders are distinct */
+  border-spacing: 0; /* Removes default spacing between borders */
+  border: 1px solid #0000000c; /* Adds a solid border (adjust color and thickness as needed) */
+  border-radius: 5px 5px 0 0; /* Rounds top-left and top-right corners (adjust radius as needed) */
+}
+
+.custom-row th {
+  background-color: #abc7ff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-button-create {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  padding-right: 20px; /* Add some right padding */
+  margin-top: 0px; /* Align to top if needed */
+  width: 100%; /* Ensures the background stretches to the full width */
+}
+
+/* .create-user-button {
+  background-color: #213ce8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+} */
+
+.global-permissions {
+
+  border: 1px solid rgb(255, 255, 255);
+  padding: 16px;
+  border-radius: 5px;
+  margin-left: 0px;
+  margin-top: 18px;
+  width: 100%;
+}
+
+
+.slds-grid {
+  margin-top: 4px;
+}
+
+.company-logo {
+  max-width: 90%;
+}
+
+.slds-col {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.slds-input {
+  margin-top: 29px;
+}
+.slds-icon {
+  position: absolute;
+    width: 217px;
+    height: 20px;
+}
+
+.slds-hint-parent {
+  color: rgb(6, 5, 8);
+}
+
+.header-line {
+  height: 1px;
+  background-color: #6e6e6e;
+  position: absolute;
+  margin-bottom: -67px;
+  margin-left: -5px;
+  width: 78%;
+}
+
+.user-info-container {
+  margin-bottom: 20px;
+}
+
+.user-icon {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  margin-left: 530px;
+  margin-top: -34px;
+}
+
+.slds-box {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.slds-box p {
+  margin: 10px 0; /* Adds space between text rows */
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px; /* Space between action buttons */
+}
+
+.custom-button {
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.user-management-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-data-container {
+  max-height: 500px; /* Set a maximum height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ddd; /* Border for the entire container */
+  border-radius: 5px; /* Slight rounding of corners */
+  background-color: white; /* Optional background color */
+  padding: 10px; /* Padding inside the container */
+}
+
+.user-names-container {
+  margin-top: 20px; /* Space between user info and user list */
+}
+
+.user-table-container {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 400px; /* Set a maximum height for the user table */
+  border: 1px solid #ddd; /* Border for the table */
+  border-radius: 5px; /* Slight rounding of corners */
+}
+
+.grid {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+  /* width: 25%; */
+  background-color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 176px;
+}
+
+.logo-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.menu {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  gap: 16px;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.dropdown-checkbox:checked + .dropdown-label + .dropdown-content {
+  display: block; /* Show dropdown when checkbox is checked */
+}
+
+.dropdown-content a:hover {
+  background-color: #e0e0e0; /* Light hover background */
+  width: 10%;
+  margin-top: 61px;
+  margin-left: 27px;
+}
+
+/* .user-info-container {
+  margin-right: 0;
+  margin-left: 315px;
+  width: 625px;
+  position: absolute;
+  border-radius: 6px;
+  border-width: 1px;
+  margin-top: 30px;
+  border-color: lightgray;
+} */
+
+/* Ensuring all elements have a consistent box-sizing */
+* {
+  box-sizing: border-box; /* Makes sizing easier and more predictable */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%; /* Full width on smaller screens */
+      min-width: auto; /* Remove minimum width */
+  }
+
+  .slds-col.slds-size_1-of-5 {
+      display: none; /* Hide sidebar on small screens if necessary */
+  }
+
+  .slds-col.slds-size_4-of-5 {
+      width: 100%; /* Main content full width */
+  }
+}
+/* userManagement.css */
+:host {
+  display: block;
+  width: 100%;
+  height: 250vh; /* Make sure the component takes full height of the viewport */
+  /* background-image: url('your-background-image-url.jpg'); Replace with your image URL */
+  background-size: cover; /* Make the background image cover the whole container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-color: white; /* Fallback color in case the image doesn't load */
+}
+.drawer-permissions {
+  margin: 10px;
+}
+
+.drawer-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.drawer-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.dropdown-button {
+  cursor: pointer;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  margin-left: auto;
+}
+
+.dropdown-icon::before {
+  content: '▼'; /* Adjust dynamically in JS */
+  font-size: 14px;
+}
+
+.child-checkboxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.child-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hidden {
+  display: none;
+}
+/* Apply styles to global permissions container */
+/* Container for the global permissions */
+.global-permissions-container {
+  background-color: #d2e1ff; /* Light green background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.global-permissions-header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.global-permissions-header input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.global-permissions-title {
+  font-size: 1.2rem;
+}
+
+.permissions-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+  gap: 20px;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+}
+
+.permission-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.drawer-permissions-container {
+  background-color: #d2e1ff; /* Light green background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.drawer-header input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.drawer-title {
+  font-size: 1.2rem;
+}
+
+.drawer-permissions {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #abc7ff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.drawer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.drawer-info input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.drawer-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.header-line {
+  border: none; /* Remove default border */
+  height: 1px; /* Height of the line */
+  background-color: #92929200; 
+  margin: 20px 0; /* Add spacing above and below the line */
+  margin-top: 2px;
+  width: 97%;
+  border-top: 1px dashed #8d8d8d62;
+}
+.c-user_management_test_user_management_test {
+  margin-top: 19px;
+  font-size: small;
+  font-weight: normal;
+}
+
+.button-container {
+  margin-left: 685px;
+  margin-top: -27px;
+}
+
+.button-spacing {
+  margin-right: 10px; /* Adjust this value to control the space */
+}
+.drawer-management-info {
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #333; /* Change text color */
+  margin-top: 20px; /* Adjust top margin */
+}
+
+.drawer-management-info a {
+  color: #d2e1ff; /* Change link color */
+  text-decoration: underline; /* Underline the link */
+}
+
+.drawer-management-info a:hover {
+  color: #d2e1ff; /* Change link color on hover */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.reset-password, .delete {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #b0a7f4;
+  border-radius: 20px;
+  color: #b0a7f4;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-password lightning-icon, .delete lightning-icon {
+  margin-right: 8px;
+}
+
+.reset-password:hover, .delete:hover {
+  background-color: #e0dbff;
+}
+.drawer-permissions-container {
+  max-height: 400px; /* Adjust this to match the height of the global permissions block */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.drawer-row {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.drawer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-container {
+  margin-left: auto;
+}
+
+.drawer-details {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.drawer-field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.drawer-field label {
+  margin-right: 10px;
+}
+
+/* Scrollbar styling */
+.drawer-permissions-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.drawer-permissions-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.drawer-permissions-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+.hidden {
+  display: none;
+}
+
+.child-checkboxes {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjusts space between buttons */
+}
+
+.button-container button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-container .cancel {
+  background-color: white;
+  color: #7b7bc7; /* Light purple text color */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Light gray border */
+}
+
+.button-container .save {
+  background-color: #9a8ef2; /* Light purple background */
+  color: white;
+}
+
+.button-container .cancel:hover,
+.button-container .save:hover {
+  opacity: 0.9;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slds-grid {
+  height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: space-between; /* Pushes elements apart, including buttons to the bottom */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Centers buttons horizontally */
+  padding: 20px;
+}
+
+.slds-grid.fill-content {
+  align-items: stretch; /* Ensures elements take full width */
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #4a4a4a; /* Dark grey color */
+}
+
+.toggle-container label {
+  margin-right: auto;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0; /* Hide the checkbox */
+  width: 0; /* Remove width */
+  height: 0; /* Remove height */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  height: 20px;
+  width: 36px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Gray background */
+  border-radius: 24px; /* Rounded edges for slider background */
+  transition: background-color 0.4s; /* Smooth background transition */
+  margin-left: -120px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white; /* Circle button */
+  border-radius: 50%; /* Rounded circle */
+  transition: transform 0.4s ease; /* Smooth sliding effect */
+}
+
+input:checked + .slider {
+  background-color: #9a8ef2; /* Light purple when toggled on */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Slide button to the right */
+}
+
+.toggle-label {
+  font-weight: bold;
+  margin-left: 550px;
+}
+
+
+/* 30/09/2024 thippeswamy */
+/* .drawer-label{
+  margin-right: 695px;
+    margin-top: -3px;
+    
+    white-space: nowrap;
+
+} */
+.drawer-info input[type="checkbox"] {
+  padding: 0;                /* Ensure no padding inside the checkbox */
+  margin-right: 4px;          /* Use a fixed value to control spacing */
+  vertical-align: middle; 
+  margin-right:-2px;    /* Align checkbox with text vertically */
+}
+
+.drawer-info .drawer-label {
+  margin-left: 0;             /* Ensure label has no left margin */
+  padding-left: 0;            /* Remove any padding */
+  vertical-align: middle; 
+  margin-right:720px;
+  white-space: nowrap;    /* Align label with the checkbox */
+}
+
+
+
+
+
+
+.drawer-info {
+  display: flex;               /* Ensures the checkbox and label are aligned horizontally */
+  align-items: center;         /* Vertically align checkbox and text */
+  cursor: pointer;             /* Indicate clickable area */
+}
+
+
+
+
+
+.drawer-details {
+  padding-left: 20px;          /* Indent the child checkboxes */
+  display: none;               /* Initially hide child permissions */
+}
+
+.drawer-details.open {
+  display: block;              /* Show child permissions when drawer is open */
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Modal Container */
+.custom-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Modal Header */
+.custom-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #606060;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Modal Body */
+.custom-modal-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.custom-input, 
+.custom-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.custom-input:focus, 
+.custom-textarea:focus {
+  border-color: #6f9bff;
+  box-shadow: 0 0 0 2px rgba(111, 155, 255, 0.2);
+}
+
+.custom-textarea {
+  height: 80px;
+  resize: none;
+}
+
+.char-count {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Modal Footer */
+.custom-modal-footer {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #e0e0e0;
+}
+
+.custom-cancel-button, 
+.custom-save-button {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-cancel-button {
+  background-color: #f5f5f5;
+  color: #333;
+  margin-right: 10px;
+}
+
+.custom-cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+.custom-save-button {
+  background-color: #5b9eff;
+  color: white;
+}
+
+.custom-save-button:hover {
+  background-color: #478be0;
+}
+
+/* Button to open modal */
+.custom-create-button {
+  background-color: #5b9eff;
+  color: white;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.custom-create-button:hover {
+  background-color: hsl(213, 71%, 58%);
+}
+.drawer-list {
+  padding: 20px;
+}
+
+.drawer-item {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.checkboxes {
+  margin-top: 10px;
+  display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+  margin-top: 10px;
+  background-color: #0070d2;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fb1;
+}
+
+
+/* button */
+.drawer-hd {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+  padding: 10px; /* Add padding around the div */
+  /* width: 50%; Set the width of the div */
+  background-color: hsl(213, 71%, 58%); /* Set the background color to blue */
+  margin-bottom: 10px; /* Add space between each drawer */
+  height: 45px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.drawer-name {
+  margin: 0; /* Remove default margin from h2 */
+  color: white; /* Set drawer name color to white for visibility */
+  flex-grow: 1; /* Allow the name to take up available space */
+}
+
+.toggle-button {
+  margin-left: 10px; /* Add space between the drawer name and button */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  border: none; /* Remove default border */
+  background: none; /* Remove default background */
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Make the button text bold */
+  color: black; /* Set button text color to black */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Optional: Button hover effect */
+.toggle-button:hover {
+  color: #333; /* Darker shade on hover */
+}

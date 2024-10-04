@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="lastName" type="String" />
+    <aura:attribute name="email" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="department" type="String" />
+    <aura:attribute name="dateOfJoining" type="String" />
+
+    <lightning:card title="Employee Registration" iconName="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning:input label="First Name" value="{!v.firstName}" required="true"/>
+            <lightning:input label="Last Name" value="{!v.lastName}" required="true"/>
+            <lightning:input label="Email" type="email" value="{!v.email}" required="true"/>
+            <lightning:input label="Phone" type="tel" value="{!v.phone}" />
+            <lightning:combobox label="Department" value="{!v.department}" 
+                options="[
+                    { label: 'HR', value: 'HR' },
+                    { label: 'IT', value: 'IT' },
+                    { label: 'Sales', value: 'Sales' },
+                    { label: 'Finance', value: 'Finance' }
+                ]"/>
+            <lightning:input label="Date of Joining" type="date" value="{!v.dateOfJoining}" />
+            <lightning:button label="Submit" onclick="{!c.handleSubmit}" class="slds-m-top_medium"/>
+        </div>
+    </lightning:card>
+</aura:component>

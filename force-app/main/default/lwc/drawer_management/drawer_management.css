@@ -1,0 +1,38 @@
+/* Global page background color */
+body, html {
+    background-color: #ffffff; /* White background for the full page */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header background color and shadow */
+.header-container {
+    background-color: #ffffff; /* White background for header */
+    padding: 45px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Hide unnecessary buttons */
+.create-new-drawer-button, .import-folder-button {
+    display: none;
+}
+
+/* Style for the 'Create New User' button */
+.create-new-user-button {
+    display: inline-block;
+    background-color: #0070d2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-new-user-button:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+}

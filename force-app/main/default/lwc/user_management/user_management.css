@@ -1,0 +1,281 @@
+.slds-theme_default {
+    background-color: #ffffff;
+}
+
+.slds-theme_shade {
+    background-color: #eff2f5;
+}
+
+.slds-text-color_inverse {
+    color: #ffffff;
+}
+
+.slds-text-color_weak {
+    color: #fcfdff;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: white; /* Default background color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: blue; /* Hover background color */
+    color: white; /* Text color on hover */
+}
+
+.nav-link-dropdown {
+    position: relative;
+}
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    background-color: white; /* Matches nav-link background */
+    min-width: 200px; /* Increased width */
+    border-radius: 4px; /* Matches nav-link border radius */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* main-content clss dropdown */
+.main-content{
+    background-color: white;      /* Background color set to white */
+    border-radius: 3px;           /* Border-radius set to 3px for rounded corners */
+    border: 0px;                  /* No border */
+    opacity: 0.9;                 /* Slightly transparent, adjust this value for more/less transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for a container-like feel */
+}
+/* main-content clss dropdown */
+
+
+/* user management header & Create New User button <start>*/
+.user-managemet{
+    margin-top: inherit;
+    margin-left: 20px;
+}
+.header-button {
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center; /* Align vertically in the center */
+}
+
+.header-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Optional: Hides overflow if the container is too small */
+    text-overflow: ellipsis; /* Optional: Adds "..." if text overflows */
+}
+.header-button-create {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    padding-right: 20px;       /* Add some right padding */
+    margin-top: 0px;           /* Align to top if needed */
+    width: 100%;               /* Ensures the background stretches to the full width */
+}
+.create-user-button {
+    background-color: #213ce8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* <div class="user-info" */
+.user-info-container p {
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    border-color: #0000000c;
+}
+
+/* user management header & Create New User button <end>*/
+
+/* hr tag for keep horizantal line */
+.custom-hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: lightgray; /* Set the color of the line */
+    margin-top: 40px;
+    
+}
+
+/* user-info container */
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between the two sections */
+    margin-top: 70px;
+}
+
+.first-page {
+    flex: 1; /* Takes up available space */
+}
+
+.drawerinformation-fields {
+    margin-left: 20px; /* Adds space on the left side */
+}
+
+.user-info-container {
+    width:100%; /* Adjust width as needed */
+    background-color: white;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 3px; /* Rounded corners */
+    padding: 15px; /* Adds padding inside the container */
+}
+.user-icon {
+    margin-left: 328px;
+    margin-top: -14px;
+    /* position: absolute; */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Modal Container */
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Modal Header */
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #606060;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* Modal Body */
+.custom-modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.custom-input, 
+.custom-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.custom-input:focus, 
+.custom-textarea:focus {
+    border-color: #6f9bff;
+    box-shadow: 0 0 0 2px rgba(111, 155, 255, 0.2);
+}
+
+.custom-textarea {
+    height: 80px;
+    resize: none;
+}
+
+.char-count {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Modal Footer */
+.custom-modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #e0e0e0;
+}
+
+.custom-cancel-button, 
+.custom-save-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-cancel-button {
+    background-color: #f5f5f5;
+    color: #333;
+    margin-right: 10px;
+}
+
+.custom-cancel-button:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-save-button {
+    background-color: #5b9eff;
+    color: white;
+}
+
+.custom-save-button:hover {
+    background-color: #478be0;
+}
+
+/* Button to open modal */
+.custom-create-button {
+    background-color: #5b9eff;
+    color: white;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.custom-create-button:hover {
+    background-color: #478be0;
+}

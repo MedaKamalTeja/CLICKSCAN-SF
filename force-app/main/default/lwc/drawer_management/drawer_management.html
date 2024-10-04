@@ -1,0 +1,103 @@
+<template>
+    <div class="slds-grid">
+        <!-- Sidebar -->
+        <div class="slds-col slds-size_1-of-5 slds-box slds-theme_default">
+            <div class="logo-container">
+                <img src={logoUrl} alt="Company Logo" class="company-logo"/>
+            </div>
+            <nav class="slds-m-top_large">
+                <a href="#" class="slds-grid slds-p-around_small slds-text-link_reset slds-theme_shade nav-link">
+                    <lightning-icon icon-name="utility:home" alternative-text="Dashboard" size="small" class="slds-m-right_small"></lightning-icon>
+                    <span style="font-weight: bold;">Dashboard</span>
+                </a>
+                <a href="#" class="slds-grid slds-p-around_small slds-text-link_reset slds-theme_shade nav-link">
+                    <lightning-icon icon-name="utility:apps" alternative-text="Drawer Management" size="small" class="slds-m-right_small"></lightning-icon>
+                    <span style="font-weight: bold;">Drawer Management</span>
+                </a>
+                <a href="#" class="slds-grid slds-p-around_small slds-text-link_reset slds-theme_shade nav-link">
+                    <lightning-icon icon-name="utility:groups" alternative-text="User Management" size="small" class="slds-m-right_small"></lightning-icon>
+                    <span style="font-weight: bold;">User Management</span>
+                </a>
+                <a href="#" class="slds-grid slds-p-around_small slds-text-link_reset slds-theme_shade nav-link">
+                    <lightning-icon icon-name="utility:settings" alternative-text="Settings" size="small" class="slds-m-right_small"></lightning-icon>
+                    <span style="font-weight: bold;">Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="slds-col slds-size_4-of-5 slds-p-around_medium">
+            <div class="slds-grid slds-grid_align-spread slds-m-bottom_medium">
+                <h2 class="slds-text-heading_large" style="font-weight: bold;">Terralogic Document inc.</h2>
+                <div>
+                    <button class="slds-button slds-button_brand slds-m-right_small" style="font-weight: bold;">Create New User</button>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap">
+                <div class="drawerinformation-fields">
+                    <lightning-button label="Create New User" class="create-user-btn" onclick={createNewUser}></lightning-button>
+
+                    <div class="content-container slds-grid slds-grid_pull-padded">
+                        <!-- User List and Search -->
+                        <div class="user-list slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                            <lightning-input type="text" label="Search Users" value={searchTerm} onchange={handleSearch}></lightning-input>
+                            <ul>
+                                <template for:each={filteredUsers} for:item="user">
+                                    <li key={user.id} onclick={showUserInfo} data-id={user.id}>
+                                        {user.name}
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+
+                        <!-- User Information -->
+                        <div class="user-info slds-col slds-size_2-of-3 slds-box slds-theme_default">
+                            <div class="action-buttons slds-m-bottom_small">
+                                <lightning-button label="Edit" onclick={editUser}></lightning-button>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete User" onclick={deleteUser} icon-class="slds-m-left_x-small"></lightning-button-icon>
+                            </div>
+
+                            <div class="profile-picture slds-m-bottom_medium">
+                                <img src={profilePictureUrl} alt="Profile Picture" class="slds-img_medium"/>
+                            </div>
+
+                            <h2>User Information</h2>
+                            <p><strong>Username:</strong> {selectedUser.username}</p>
+                            <p><strong>Email:</strong> {selectedUser.email}</p>
+                            <p><strong>Description:</strong> {selectedUser.description}</p>
+                            <p><strong>Created Date:</strong> {selectedUser.createdDate}</p>
+
+                            <!-- Administrator Permissions -->
+                            <div class="admin-permissions slds-m-top_medium">
+                                <lightning-input type="toggle" label="Administrator Permissions" checked={selectedUser.isAdmin}></lightning-input>
+                            </div>
+
+                            <!-- User Permissions -->
+                            <h2 class="slds-m-top_large">User Permissions</h2>
+                            <table class="permissions-table slds-table slds-table_cell-buffer slds-table_bordered">
+                                <tr>
+                                    <td><lightning-input type="checkbox" label="Display" checked={permissions.display}></lightning-input></td>
+                                </tr>
+                                <tr>
+                                    <td><lightning-input type="checkbox" label="Create Folder" checked={permissions.createFolder}></lightning-input></td>
+                                </tr>
+                            </table>
+
+                            <!-- Drawer Permissions -->
+                            <h2 class="slds-m-top_large">Drawer Permissions</h2>
+                            <table class="permissions-table slds-table slds-table_cell-buffer slds-table_bordered">
+                                <tr>
+                                    <td><lightning-input type="checkbox" label="DOCUMENTS" checked={drawerPermissions.documents}></lightning-input></td>
+                                </tr>
+                                <tr>
+                                    <td><lightning-input type="checkbox" label="Key_Ref" checked={drawerPermissions.keyRef}></lightning-input></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

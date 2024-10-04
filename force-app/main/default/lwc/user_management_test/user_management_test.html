@@ -1,0 +1,374 @@
+<template>
+    <div class="slds-grid fill-content">
+        <!-- Main Content -->
+        <div class="main-div">
+            <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                <div class="container">
+                    <div class="header-button-container">
+                        <h2 class="slds-text-heading_large" style="font-weight: 400; font-size: x-large;">User
+                            Management</h2>
+                        <h2
+                            style="font-size: 14px;font-weight: 400;margin-left: -313px;width: 230px;margin-top: 25px; ">
+                            Manage Users and their Permissions</h2>
+                    </div>
+
+                    <div class="user-management">
+                        <!-- Button to open the modal -->
+                        <button class="custom-create-button" onclick={openModal}>
+                            + Create New User
+                        </button>
+                
+                        <!-- Modal -->
+                        <template if:true={isModalOpen}>
+                            <div class="modal-overlay"></div>
+                            <section role="dialog" tabindex="-1" class="custom-modal">
+                                <div class="custom-modal-container">
+                                    <!-- Modal Header -->
+                                    <header class="custom-modal-header">
+                                        <h2>Create New User</h2>
+                                        <button class="close-button" onclick={closeModal}>
+                                            &times;
+                                        </button>
+                                    </header>
+                
+                                    <!-- Modal Body -->
+                                    <div class="custom-modal-body">
+                                        <div class="form-group">
+                                            <label for="username">* Username</label>
+                                            <input type="text" id="username" placeholder="Enter Username" required class="custom-input" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">* Email</label>
+                                            <input type="email" id="email" placeholder="Enter email" required class="custom-input" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <textarea id="description" placeholder="Description" maxlength="200" class="custom-textarea"></textarea>
+                                            <span class="char-count">0 / 200</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password" placeholder="P@ssw0rd" class="custom-input" readonly />
+                                        </div>
+                                    </div>
+                
+                                    <!-- Modal Footer -->
+                                    <footer class="custom-modal-footer">
+                                        <button class="custom-cancel-button" onclick={closeModal}>Cancel</button>
+                                        <button class="custom-save-button" onclick={handleSave}>Save</button>
+                                    </footer>
+                                </div>
+                            </section>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="first-page">
+                    <div class="slds-grid slds-wrap">
+                        <div class="drawerinformation-fields" style="border: 0;">
+                            <div>
+                                <div class="slds-m-bottom_medium">
+                                    <input type="text" class="slds-input" placeholder="Search" oninput={handleSearch} />
+                                </div>
+
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-text-title_caps custom-row">
+                                            <th scope="col">
+                                                <button
+                                                    class="slds-button slds-button_icon slds-button_icon-inverse slds-m-right_small"
+                                                    onclick={handleSortByName}>
+                                                    <lightning-icon icon-name="utility:sort"
+                                                        alternative-text="Sort by Account Name"
+                                                        size="small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Sort by Account Name</span>
+                                                </button>
+                                                <div class="slds-truncate" title="Account Name">Account Name</div>
+                                            </th>
+                                            <th scope="col">
+                                                <button
+                                                    class="slds-button slds-button_icon slds-button_icon-inverse slds-m-right_small"
+                                                    onclick={handleSortByDate}>
+                                                    <lightning-icon icon-name="utility:sort"
+                                                        alternative-text="Sort by Create Date"
+                                                        size="small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Sort by Create Date</span>
+                                                </button>
+                                                <div class="slds-truncate" title="Create Date">Create Date</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={filteredUsers} for:item="user">
+                                            <tr key={user.id} class="slds-hint-parent standby table-row"
+                                                data-id={user.id} onclick={handleUserClick}>
+                                                <td class="slds-truncate" title={user.username}>{user.username}</td>
+                                                <td class="slds-truncate" title={user.created_at}>{user.created_at}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <!-- User Information -->
+                        <template if:true={selectedUser}>
+                            <div class="user-info-container"
+                                style="border-radius: 5px; border: 1px solid lightgrey; background-color: white; padding: 15px;">
+                                <h2 style="font-weight:bold;font-size:25px;">User Information</h2>
+                                <div class="image-container">
+                                    <img src={iconUrl} alt="User Icon" class="user-icon" />
+                                </div>
+                                <div>
+                                    <p style="margin-bottom: 15px;margin-top: 15px;"><strong>Username:</strong>
+                                        {userData.username}</p>
+                                    <p style="margin-bottom: 15px;"><strong>Email:</strong> {userData.email}</p>
+                                    <p style="margin-bottom: 15px;"><strong>Description:</strong> {userData.description}
+                                    </p>
+                                    <p style="margin-bottom: 15px;"><strong>Created Date:</strong> {userData.created_at}
+                                    </p>
+                                    <!-- <img src={userData.thumbnail} alt="User Thumbnail" /> -->
+
+                                    <!-- <template> -->
+
+                                    <div class="toggle-container">
+                                        <label for="toggle">Administrator permissions</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="toggle" onchange={handleToggleChange}>
+                                            <span class="slider"></span>
+                                        </div>
+                                        <span class="toggle-label">{toggleLabel}</span>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="actions" style="margin-top: 10px;">
+                                    <lightning-button class="custom-button reset-password-button" label="Reset Password"
+                                        onclick={handleResetPassword}></lightning-button>
+                                    <lightning-button class="custom-button delete-user-button" label="Delete User"
+                                        icon-name="utility:delete" icon-position="left"
+                                        onclick={handleDeleteUser}></lightning-button>
+                                </div>
+
+                                <!-- Reset Password Modal -->
+                                <template if:true={isResetPasswordModalOpen}>
+                                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                                        <div class="slds-modal__container">
+                                            <div class="slds-modal__header">
+                                                <button
+                                                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                                    title="Close" onclick={closeResetPasswordModal}>
+                                                    <lightning-icon icon-name="utility:close" alternative-text="close"
+                                                        size="small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 class="slds-text-heading_medium">✎Reset Password</h2>
+                                            </div>
+                                            <div class="slds-modal__content slds-p-around_medium">
+                                                <p>Are you sure you want to reset the password for
+                                                    <strong>{selectedUser.username}</strong>?
+                                                </p>
+                                                <p>This action cannot be undone.</p>
+                                            </div>
+                                            <div class="slds-modal__footer">
+                                                <lightning-button variant="neutral" label="Cancel"
+                                                    onclick={closeResetPasswordModal}></lightning-button>
+                                                <lightning-button variant="brand" label="Reset Password"
+                                                    onclick={confirmResetPassword}></lightning-button>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div class="slds-backdrop slds-backdrop_open"></div>
+                                </template>
+
+                                <!-- Delete Confirmation Modal -->
+                                <template if:true={isDeleteModalOpen}>
+                                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                                        <div class="slds-modal__container">
+                                            <div class="slds-modal__header">
+                                                <button
+                                                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                                    title="Close" onclick={closeDeleteModal}>
+                                                    <lightning-icon icon-name="utility:close" alternative-text="close"
+                                                        size="small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <!-- <h2 class="slds-text-heading_medium"></h2> -->
+                                            </div>
+                                            <div class="slds-modal__content slds-p-around_medium">
+                                                <p>Are you sure you want to delete <strong>{userData.username}</strong>?
+                                                </p>
+                                                <p>This action cannot be undone.</p>
+                                            </div>
+                                            <div class="slds-modal__footer">
+                                                <lightning-button variant="neutral" label="Cancel"
+                                                    onclick={closeDeleteModal}></lightning-button>
+                                                <lightning-button variant="destructive" label="Delete"
+                                                    onclick={confirmDeleteUser}></lightning-button>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div class="slds-backdrop slds-backdrop_open"></div>
+                                </template>
+
+                                <hr class="header-line" />
+                                <div>
+                                    <p class="drawer-management-info">
+                                        To set up a new Drawer, go to <a href="/drawer-management">Drawer Management</a>
+                                    </p>
+                                </div>
+                                <template if:true={areAllPermissionsChecked}>
+                                    <div class="button-container">
+                                        <lightning-button label="Save" onclick={handleSave}></lightning-button>
+                                        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                                    </div>
+                                </template>
+
+                                <div class="global-permissions-container">
+                                    <div class="global-permissions-header">
+                                        <input type="checkbox" onchange={handleGlobalCheckboxChange} />
+                                        <span class="global-permissions-title">Global Permissions</span>
+                                    </div>
+                                    
+                                    <div class="permissions-list">
+                                        <template for:each={permissions} for:item="permission">
+                                            <div key={permission.id} class="permission-item">
+                                                <input type="checkbox" name={permission.id} checked={permission.checked} onchange={handlePermissionChange} />
+                                                <label class="checkbox-label">{permission.label}</label>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="drawer-permissions-container">
+                                    <div class="drawer-header">
+
+                                        <span class="drawer-title">Drawer Permissions</span>
+                                    </div>
+
+                                    <!-- Drawer Permissions Section -->
+                                    <!-- <div class="drawer-permissions-container">
+                                        <template for:each={drawers1} for:item="drawer">
+                                            <div key={drawer.id} class="drawer-row" data-id={drawer.id}>
+                                                <div class="drawer-info" onclick={handleDrawerVisibility} data-id={drawer.id}>
+                                                    <input type="checkbox" data-id={drawer.id} checked={drawer.checked} onchange={handleParentCheckboxChange} />
+                                                    <span class="drawer-label">{drawer.username}</span>
+                                                    <span class="icon-container">
+                                                        <lightning-icon icon-name={drawer.isOpen ? "utility:chevrondown" : "utility:chevronright"} alternative-text="Toggle Drawer"></lightning-icon> 
+                                                    </span>
+                                                </div>
+                                
+                                                <template if:true={drawer.isOpen}>
+                                                    <div class="drawer-details open">
+                                                        <template for:each={drawer.permissions} for:item="permission">
+                                                            <div key={permission.id} class="drawer-field">
+                                                                <input type="checkbox" name={permission.id} checked={permission.checked} onchange={handleChildPermissionChange} />
+                                                                <label>{permission.label}</label>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div> -->
+                                    <!-- <div>
+                                        <template if:true={drawers}>
+                                            <template for:each={drawers} for:item="drawer">
+                                                <div key={drawer.id} >
+                                                    <div class="drawer-hd">
+                                                        <h2 class="drawer-name">{drawer.username}</h2>
+                                                        <button data-id={drawer.id} onclick={toggleCheckboxes} class="toggle-button">
+                                                        
+                                                            <template if:true={drawer.isOpen}>
+                                                                &#x25BC; 
+                                                            </template>
+                                                            <template if:false={drawer.isOpen}>
+                                                                &gt; 
+                                                            </template>
+                                                        </button>
+                                                    </div> 
+                                                    
+                                                    <template if:true={drawer.isOpen}>
+                                                        <div class="checkboxes">
+                                                            <template for:each={permissions} for:item="permission">
+                                                                <div key={permission.id} class="permission-item">
+                                                                    <input type="checkbox" name={permission.id} checked={permission.checked} onchange={handlePermissionChange} />
+                                                                    <label class="checkbox-label">{permission.label}</label>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                    
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:true={error}>
+                                            <div>Error fetching drawers: {error}</div>
+                                        </template>
+                                    </div> -->
+                                    <div>
+                                        <template if:true={drawers}>
+                                            <template for:each={drawers} for:item="drawer">
+                                                <div key={drawer.id} class="drawer-container" data-id={drawer.id}>
+                                                    <div class="drawer-header">
+                                                        <h2>{drawer.username}</h2>
+                                                        <button data-id={drawer.id} onclick={toggleDrawer}>
+                                                            <template if:true={drawer.isOpen}>&#x25BC;</template>
+                                                            <template if:false={drawer.isOpen}>&gt;</template>
+                                                        </button>
+                                                    </div>
+                                                    <template if:true={drawer.isOpen}>
+                                                        <div class="checkboxes">
+                                                            <template for:each={drawer.permissions} for:item="permission">
+                                                                <div key={permission.id}>
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        name={permission.id}
+                                                                        checked={permission.checked}
+                                                                        onchange={handlePermissionChange}
+                                                                    />
+                                                                    <label>{permission.label}</label>
+                                                                </div>
+                                                            </template>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
