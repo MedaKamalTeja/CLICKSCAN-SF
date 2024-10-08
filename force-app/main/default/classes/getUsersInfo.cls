@@ -1,4 +1,4 @@
-public class getUsersInfo {
+public class GetUsersInfo {
     @AuraEnabled(cacheable=true)
     public static List<Map<String, Object>> getDrawerById(Integer id) {
         // Define a list to hold the user data map

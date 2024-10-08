@@ -1,4 +1,4 @@
-public class getUsersList {
+public class GetUsersLists {
     @AuraEnabled(cacheable=true)
     public static List<Map<String, Object>> getUsers() {
         List<Map<String, Object>> formattedDrawerList = new List<Map<String, Object>>();

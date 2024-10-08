@@ -13,17 +13,15 @@ public class FetchPermission {
         request.setHeader('Authorization', TokenManager.getBearerToken());
         request.setHeader('x-tenant-id', TokenManager.getTenantId());
         request.setHeader('Accept', 'application/json');
+        // request.setMethod('GET');
+        // request.setHeader('Content-Type', 'application/json');
+        // request.setHeader('accept', 'application/json');
+        // request.setHeader('x-tenant-id', 'ahpEiUg0Sc');
+        // request.setHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoxLCJlbWFpbCI6InN1cGVyYWRtaW5AdGVycmFsb2dpYy5jb20iLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJyb2xlcyI6WyJTQSJdfSwiaWF0IjoxNzI4Mjg2ODE0LCJleHAiOjE3MjgzMzAwMTR9.lgNLdAr6dB64zhlF_HaFrd9o-VxY5tmqR7LY2NesnsE');
 
-        System.debug('URL: ' + url); // Debugging the URL
-        System.debug('Authorization Token: ' + TokenManager.getBearerToken()); // Debugging the Authorization Token
-        System.debug('Tenant ID: ' + TokenManager.getTenantId()); // Debugging the Tenant ID
-        
         try {
             // Sending the request
             HttpResponse response = http.send(request);
-            
-            System.debug('Response Status Code: ' + response.getStatusCode()); // Debugging the status code
-            System.debug('Response Body: ' + response.getBody()); // Debugging the full response body
             
             if (response.getStatusCode() == 200) {
                 // Parse the JSON response
@@ -35,19 +33,18 @@ public class FetchPermission {
                     List<Object> payloadList = (List<Object>) jsonResponse.get('payload');
                     for (Object permission : payloadList) {
                         permissionsList.add((Map<String, Object>) permission);
-                        System.debug('Permission Added: ' + (Map<String, Object>) permission); // Log each permission
                     }
                 } else {
                     System.debug('No payload found. Returning an empty list.');
                 }
             } else {
-                System.debug('HTTP response error: ' + response.getStatusCode());
+                System.debug('HTTP response error: ' + response.getStatus());
                 System.debug('Response body: ' + response.getBody());
             }
         } catch (Exception e) {
             System.debug('Exception occurred: ' + e.getMessage());
         }
         
-        return permissionsList; // Return the permissions list
+        return permissionsList; // Return only if payload is found
     }
 }

@@ -1,0 +1,52 @@
+<template>
+    <!-- Button to trigger modal -->
+    <lightning-button label="Create New Database" onclick={handleOpenModal}></lightning-button>
+
+    <!-- Modal -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Create New Database</h2>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <!-- Form Structure matching the provided image -->
+
+                    <lightning-input label="Organization Name" required class="form-item" placeholder="Name for the organization"></lightning-input>
+                    <div class="form-row">
+                        <lightning-input label="Expired Date" type="date" required class="form-item"></lightning-input>
+                        <lightning-input label="No. of User" type="number" required class="form-item" placeholder="No. of User"></lightning-input>
+                    </div>
+                    <lightning-input label="Connection Name" required class="form-item" placeholder="Name for the connection"></lightning-input>
+                    <div class="form-row">
+                        <lightning-input label="Host Name" required class="form-item" placeholder="Name or IP Address of the server"></lightning-input>
+                        <lightning-input label="Port" required class="form-item" placeholder="TCP/IP Port"></lightning-input>
+                    </div>
+                    <lightning-input label="Username" required class="form-item" value="superadmin"></lightning-input>
+                    <lightning-input label="Password" type="password" required class="form-item"></lightning-input>
+                    <lightning-input label="Database Name" required class="form-item" placeholder="The Schema to use as default Schema"></lightning-input>
+
+                    <!-- Migrate Database Checkbox -->
+                    <lightning-input label="Migrate Database" type="checkbox" class="form-item"></lightning-input>
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={handleCloseModal}></lightning-button>
+                    <lightning-button variant="brand" label="Create" onclick={handleCreate}></lightning-button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

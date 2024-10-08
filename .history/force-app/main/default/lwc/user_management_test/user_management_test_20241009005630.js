@@ -2,7 +2,7 @@ import { LightningElement, track, wire, api } from 'lwc';
 // import logo from '@salesforce/resourceUrl/click_scan';
 import icon from '@salesforce/resourceUrl/user_icon';
 import getUsers from '@salesforce/apex/GetUsersLists.getUsers';
-import getDrawers from '@salesforce/apex/GetDrawerLists.getDrawers';
+import getDrawers from '@salesforce/apex/getDrawerList.getDrawersls';
 import getDrawerById from '@salesforce/apex/getUsersInfo.getDrawerById';
 import resetUserPassword from '@salesforce/apex/ResetPassword.resetUserPassword';
 import deleteUserById from '@salesforce/apex/DeleteUser.deleteUserById';

@@ -118,11 +118,11 @@
                                 </div>
                                 <div>
                                     <p style="margin-bottom: 15px;margin-top: 15px;"><strong>Username:</strong>
-                                        {userData.username}</p>
-                                    <p style="margin-bottom: 15px;"><strong>Email:</strong> {userData.email}</p>
-                                    <p style="margin-bottom: 15px;"><strong>Description:</strong> {userData.description}
+                                        {selectedUser.username}</p>
+                                    <p style="margin-bottom: 15px;"><strong>Email:</strong> {selectedUser.email}</p>
+                                    <p style="margin-bottom: 15px;"><strong>Description:</strong> {selectedUser.description}
                                     </p>
-                                    <p style="margin-bottom: 15px;"><strong>Created Date:</strong> {userData.created_at}
+                                    <p style="margin-bottom: 15px;"><strong>Created Date:</strong> {selectedUser.created_at}
                                     </p>
         
                                                             
@@ -197,7 +197,7 @@
                                                 </button>
                                             </div>
                                             <div class="slds-modal__content slds-p-around_medium">
-                                                <p>Are you sure you want to delete <strong>{userData.username}</strong>?
+                                                <p>Are you sure you want to delete <strong>{selectedUser.username}</strong>?
                                                 </p>
                                                 <p>This action cannot be undone.</p>
                                             </div>

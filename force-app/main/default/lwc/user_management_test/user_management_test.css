@@ -846,67 +846,57 @@ html, body {
 .toggle-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #4a4a4a; /* Dark grey color */
-}
-
-.toggle-container label {
-  margin-right: auto;
 }
 
 .toggle-switch {
   position: relative;
-  width: 50px;
-  height: 24px;
+  width: 50px; /* Width of the toggle */
+  height: 24px; /* Height of the toggle */
+  margin-left: 10px; /* Spacing between label and toggle */
 }
 
 .toggle-switch input {
-  opacity: 0; /* Hide the checkbox */
-  width: 0; /* Remove width */
-  height: 0; /* Remove height */
+  opacity: 0; /* Hide the original checkbox */
+  width: 0;
+  height: 0;
 }
 
 .slider {
   position: absolute;
   cursor: pointer;
-  height: 20px;
-  width: 36px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc; /* Gray background */
-  border-radius: 24px; /* Rounded edges for slider background */
-  transition: background-color 0.4s; /* Smooth background transition */
-  margin-left: -120px;
+  background-color: #ccc; /* Default background */
+  transition: .4s; /* Transition effect */
+  border-radius: 24px; /* Rounded corners */
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 13px;
-  width: 13px;
-  left: 4px;
-  bottom: 3px;
-  background-color: white; /* Circle button */
-  border-radius: 50%; /* Rounded circle */
-  transition: transform 0.4s ease; /* Smooth sliding effect */
+  height: 16px; /* Height of the toggle knob */
+  width: 16px; /* Width of the toggle knob */
+  left: 4px; /* Positioning */
+  bottom: 4px; /* Positioning */
+  background-color: white; /* Knob color */
+  border-radius: 50%; /* Round knob */
+  transition: .4s; /* Transition effect */
 }
 
 input:checked + .slider {
-  background-color: #9a8ef2; /* Light purple when toggled on */
+  background-color: #4caf50; /* Color when checked */
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px); /* Slide button to the right */
+  transform: translateX(26px); /* Move knob to the right */
 }
 
 .toggle-label {
-  font-weight: bold;
-  margin-left: 550px;
+  margin-left: 10px; /* Spacing from the toggle switch */
 }
+
 
 
 /* 30/09/2024 thippeswamy */
@@ -1168,4 +1158,114 @@ button:hover {
 /* Optional: Button hover effect */
 .toggle-button:hover {
   color: #333; /* Darker shade on hover */
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5b9eff36;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  flex-grow: 1; /* Makes the title take up remaining space */
+  margin-left: 10px; /* Spacing between checkbox and title */
+}
+
+.drawer-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Style the checkbox in the drawer header */
+.header-checkbox {
+  margin-right: 10px; /* Space between checkbox and title */
+  accent-color: #5b9eff; /* Green checkbox */
+  width: 18px;
+  height: 18px;
+}
+
+
+
+
+/* Table container to ensure proper scrolling */
+.table-container {
+  max-height: 400px; /* Adjust height to your needs */
+  overflow-y: auto;
+}
+
+/* Custom header styles */
+.table-header {
+  background-color: #b3e5fc; /* Light blue color matching the screenshot */
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Flexbox to align the text and sort icon beside each other */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* The header text for columns */
+.header-text {
+  margin-right: 8px; /* Space between text and the sort icon */
+}
+
+/* Sort button */
+.sort-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sort-button lightning-icon {
+  vertical-align: middle;
+  color: #757575;
+}
+
+/* Table rows */
+.table-row {
+  background-color: #fff; /* Default white background for rows */
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #e0f7fa; /* Light blue hover effect */
+}
+
+/* Highlighted row for selected user */
+.highlight {
+  background-color: #b3e5fc; /* Light blue background for the selected row */
+}
+
+/* Table cell styling */
+.slds-truncate {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table scrollbar customization */
+.table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #b3e5fc;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
 }

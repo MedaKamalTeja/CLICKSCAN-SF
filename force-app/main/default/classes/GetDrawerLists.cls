@@ -1,4 +1,4 @@
-public class getDrawersList{
+public class GetDrawerLists{
 
     @AuraEnabled(cacheable=true)
     public static List<Map<String, Object>> getDrawers() {
